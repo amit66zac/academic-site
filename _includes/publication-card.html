@@ -26,13 +26,8 @@
     </details>
     {% endif %}
     <p class="pub-links">
-      {% if p.doi and p.doi != "" %}
-      <a href="https://doi.org/{{ p.doi }}" class="pub-link-btn" target="_blank" rel="noopener">DOI</a>
-      {% elsif p.link %}
-      <a href="{{ p.link }}" class="pub-link-btn" target="_blank" rel="noopener">Publisher</a>
-      {% endif %}
-      {% if p.link and p.doi and p.doi != "" %}
-      <a href="{{ p.link }}" class="pub-link-btn pub-link-btn--outline" target="_blank" rel="noopener">Publisher</a>
+      {% if p.link %}
+      <a href="{{ p.link }}" class="pub-link-btn" target="_blank" rel="noopener">{{ p.link_label | default: "Publisher" }}</a>
       {% endif %}
       <a href="{{ '/publications/' | relative_url }}{{ p.id }}/" class="pub-link-btn pub-link-btn--outline">Details</a>
     </p>
