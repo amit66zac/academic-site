@@ -3,7 +3,7 @@
 
 title: "Amit Zac"
 description: "Assistant Professor, University of Amsterdam — Competition Law, Law & Economics, Digital Markets"
-baseurl: ""  # use "" if repo is username.github.io; else "/repo-name"
+baseurl: "/academic-site"
 url: "https://amitzac.github.io"  # change to your GitHub Pages URL
 
 # GitHub Pages uses kramdown; optional highlighter
