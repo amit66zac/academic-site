@@ -1,0 +1,58 @@
+# Personal Academic Website — Jekyll for GitHub Pages
+# Dr. Amit Zac
+
+title: "Amit Zac"
+description: "Assistant Professor, University of Amsterdam — Competition Law, Law & Economics, Digital Markets"
+baseurl: ""  # use "" if repo is username.github.io; else "/repo-name"
+url: "https://amitzac.github.io"  # change to your GitHub Pages URL
+
+# GitHub Pages uses kramdown; optional highlighter
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    block: { line_numbers: false }
+
+# Build
+permalink: pretty
+future: true
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# SEO & social
+twitter_username: "AmitZac1" 
+author: "Amit Zac"
+email: "a.zac@uva.nl"
+
+# Custom
+cv_pdf: "/assets/cv/Amit_Zac_CV_August.pdf"
+google_scholar: "https://scholar.google.com/citations?user=yQcSQ10AAAAJ&hl=en"
+uva_profile: "https://www.uva.nl/en/profile/z/a/a.zac/a.zac.html"
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - docs/
+  - node_modules/
+
+# Collections for publication detail pages
+collections:
+  publications:
+    output: true
+    permalink: /publications/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: publication
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page

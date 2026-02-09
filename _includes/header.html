@@ -1,0 +1,19 @@
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="{{ '/' | relative_url }}" class="site-name">{{ site.title }}</a>
+    <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+      <span class="hamburger"></span>
+    </button>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav-list">
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
+        <li><a href="{{ '/cv/' | relative_url }}">CV</a></li>
+        <li><a href="{{ '/research/' | relative_url }}">Research</a></li>
+        <li><a href="{{ '/teaching/' | relative_url }}">Teaching</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="theme-toggle" aria-label="Toggle dark mode" data-theme-toggle title="Toggle dark mode"></button>
+  </div>
+</header>

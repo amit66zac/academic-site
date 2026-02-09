@@ -1,0 +1,15 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <p class="footer-name">{{ site.title }} — {{ site.data.cv.person.affiliation }}</p>
+    <p class="footer-contact">
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      {% if site.data.cv.person.profile_page %}
+      · <a href="{{ site.data.cv.person.profile_page }}" target="_blank" rel="noopener">UvA profile</a>
+      {% endif %}
+      {% if site.google_scholar and site.google_scholar != '' %}
+      · <a href="{{ site.google_scholar }}" target="_blank" rel="noopener">Google Scholar</a>
+      {% endif %}
+    </p>
+    <p class="footer-legal">No cookies; no tracking.</p>
+  </div>
+</footer>

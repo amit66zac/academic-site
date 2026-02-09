@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+<article class="publication-detail">
+  <p class="back-link"><a href="{{ '/publications/' | relative_url }}">← All Publications</a></p>
+
+  <header class="publication-header">
+    <div class="pub-meta-badges">
+      <span class="pub-year-badge">{{ page.year }}</span>
+      <span class="pub-type-badge">{{ page.type }}</span>
+      {% if page.status %}<span class="pub-status-badge">{{ page.status }}</span>{% endif %}
+    </div>
+    <h1>{{ page.title }}</h1>
+    <p class="authors">{{ page.authors }}</p>
+    <p class="venue">{{ page.venue }}{% if page.volume %} {{ page.volume }}{% endif %}{% if page.pages %}, pp. {{ page.pages }}{% endif %}</p>
+  </header>
+
+  {% if page.figure %}
+  <figure class="publication-figure">
+    <img src="{{ '/assets/images/papers/' | relative_url }}{{ page.figure }}" alt="Key figure from {{ page.title }}" loading="lazy">
+    <figcaption>Key figure from this paper</figcaption>
+  </figure>
+  {% endif %}
+
+  {% if page.abstract and page.abstract != "" %}
+  <section class="abstract">
+    <h2>Abstract</h2>
+    <p>{{ page.abstract }}</p>
+  </section>
+  {% endif %}
+
+  <section class="links">
+    <h2>Access</h2>
+    <div class="link-buttons">
+      {% if page.pdf and page.pdf != "" %}
+      <a href="{{ '/assets/pdfs/' | relative_url }}{{ page.pdf }}" class="button" target="_blank" rel="noopener">Download PDF</a>
+      {% endif %}
+      {% if page.link %}
+      <a href="{{ page.link }}" class="button button--outline" target="_blank" rel="noopener">Publisher / DOI</a>
+      {% endif %}
+      {% if page.doi and page.doi != "" %}
+      <a href="https://doi.org/{{ page.doi }}" class="button button--outline" target="_blank" rel="noopener">DOI: {{ page.doi }}</a>
+      {% endif %}
+    </div>
+  </section>
+</article>

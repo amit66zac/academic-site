@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<article class="home">
+  <header class="hero">
+    <h1 class="hero-title">{{ site.title }}</h1>
+    <p class="hero-subtitle">{{ site.data.cv.person.title }}, {{ site.data.cv.person.affiliation }}</p>
+    <p class="hero-meta">{{ site.data.cv.person.unit }}</p>
+  </header>
+
+  <section class="intro">
+    <p class="lead">
+      I am an assistant professor at the <a href="{{ site.uva_profile }}" target="_blank" rel="noopener">University of Amsterdam</a>, 
+      Center for Law and Economics. My research focuses on <strong>competition law</strong>, <strong>law and economics</strong>, 
+      and <strong>digital markets</strong>—including inequality, enforcement, and the role of technology in regulation.
+    </p>
+  </section>
+
+  <section class="quick-links">
+    <h2 class="visually-hidden">Quick links</h2>
+    <ul class="quick-links-list">
+      <li><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
+      <li><a href="{{ '/cv/' | relative_url }}">CV</a></li>
+      <li><a href="{{ '/research/' | relative_url }}">Research</a></li>
+      <li><a href="{{ '/teaching/' | relative_url }}">Teaching</a></li>
+      <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+    </ul>
+  </section>
+
+  <section class="featured">
+    <h2>Featured</h2>
+    <ul class="featured-list">
+      {% assign pubs = site.data.publications | sort: "year" | reverse %}
+      {% for pub in pubs limit: 3 %}
+      <li>
+        <a href="{{ '/publications/#' | relative_url }}{{ pub.id }}">{{ pub.title }}</a>
+        <span class="meta">({{ pub.year }}{% if pub.venue %} — {{ pub.venue }}{% endif %})</span>
+      </li>
+      {% endfor %}
+    </ul>
+    <p><a href="{{ '/publications/' | relative_url }}">View all publications →</a></p>
+  </section>
+
+  <section class="download-cv">
+    <p>
+      <a href="{{ site.cv_pdf | relative_url }}" class="button" download>Download CV (PDF)</a>
+    </p>
+  </section>
+</article>

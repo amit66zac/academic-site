@@ -1,0 +1,41 @@
+{% comment %}
+  Include with: publication (item from site.data.publications)
+  Usage: {% include publication-card.html publication=pub %}
+{% endcomment %}
+{% assign p = include.publication %}
+<li class="pub-card{% if p.figure %} pub-card--has-figure{% endif %}" id="{{ p.id }}" data-year="{{ p.year }}" data-type="{{ p.type }}">
+  {% if p.figure %}
+  <div class="pub-figure">
+    <a href="{{ '/publications/' | relative_url }}{{ p.id }}/">
+      <img src="{{ '/assets/images/papers/' | relative_url }}{{ p.figure }}" alt="Figure from {{ p.title }}" loading="lazy" width="400">
+    </a>
+  </div>
+  {% endif %}
+  <div class="pub-body">
+    <span class="pub-year-badge">{{ p.year }}{% if p.status %} <span class="pub-status">{{ p.status }}</span>{% endif %}</span>
+    <span class="pub-type-badge">{{ p.type }}</span>
+    <h3 class="pub-title">
+      <a href="{{ '/publications/' | relative_url }}{{ p.id }}/">{{ p.title }}</a>
+    </h3>
+    <p class="pub-authors">{{ p.authors }}</p>
+    <p class="pub-venue">{{ p.venue }}{% if p.volume %} {{ p.volume }}{% endif %}{% if p.pages %}, pp. {{ p.pages }}{% endif %}</p>
+    {% if p.abstract and p.abstract != "" %}
+    <details class="pub-abstract-toggle">
+      <summary>Abstract</summary>
+      <p class="pub-abstract-text">{{ p.abstract }}</p>
+    </details>
+    {% endif %}
+    <p class="pub-links">
+      {% if p.pdf and p.pdf != "" %}
+      <a href="{{ '/assets/pdfs/' | relative_url }}{{ p.pdf }}" class="pub-link-btn" target="_blank" rel="noopener">PDF</a>
+      {% endif %}
+      {% if p.link %}
+      <a href="{{ p.link }}" class="pub-link-btn pub-link-btn--outline" target="_blank" rel="noopener">Publisher</a>
+      {% endif %}
+      {% if p.doi and p.doi != "" %}
+      <a href="https://doi.org/{{ p.doi }}" class="pub-link-btn pub-link-btn--outline" target="_blank" rel="noopener">DOI</a>
+      {% endif %}
+      <a href="{{ '/publications/' | relative_url }}{{ p.id }}/" class="pub-link-btn pub-link-btn--outline">Details</a>
+    </p>
+  </div>
+</li>
