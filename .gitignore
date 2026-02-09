@@ -9,3 +9,6 @@ node_modules/
 .bundle/
 vendor/
 extract_figures.py
+
+# Do not commit publication PDFs (publisher restrictions)
+assets/pdfs/*.pdf

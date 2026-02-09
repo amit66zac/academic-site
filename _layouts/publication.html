@@ -33,14 +33,13 @@ layout: default
   <section class="links">
     <h2>Access</h2>
     <div class="link-buttons">
-      {% if page.pdf and page.pdf != "" %}
-      <a href="{{ '/assets/pdfs/' | relative_url }}{{ page.pdf }}" class="button" target="_blank" rel="noopener">Download PDF</a>
-      {% endif %}
-      {% if page.link %}
-      <a href="{{ page.link }}" class="button button--outline" target="_blank" rel="noopener">Publisher / DOI</a>
-      {% endif %}
       {% if page.doi and page.doi != "" %}
-      <a href="https://doi.org/{{ page.doi }}" class="button button--outline" target="_blank" rel="noopener">DOI: {{ page.doi }}</a>
+      <a href="https://doi.org/{{ page.doi }}" class="button" target="_blank" rel="noopener">View at Publisher (DOI)</a>
+      {% elsif page.link %}
+      <a href="{{ page.link }}" class="button" target="_blank" rel="noopener">View at Publisher</a>
+      {% endif %}
+      {% if page.link and page.doi and page.doi != "" %}
+      <a href="{{ page.link }}" class="button button--outline" target="_blank" rel="noopener">Publisher page</a>
       {% endif %}
     </div>
   </section>

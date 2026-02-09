@@ -26,14 +26,13 @@
     </details>
     {% endif %}
     <p class="pub-links">
-      {% if p.pdf and p.pdf != "" %}
-      <a href="{{ '/assets/pdfs/' | relative_url }}{{ p.pdf }}" class="pub-link-btn" target="_blank" rel="noopener">PDF</a>
-      {% endif %}
-      {% if p.link %}
-      <a href="{{ p.link }}" class="pub-link-btn pub-link-btn--outline" target="_blank" rel="noopener">Publisher</a>
-      {% endif %}
       {% if p.doi and p.doi != "" %}
-      <a href="https://doi.org/{{ p.doi }}" class="pub-link-btn pub-link-btn--outline" target="_blank" rel="noopener">DOI</a>
+      <a href="https://doi.org/{{ p.doi }}" class="pub-link-btn" target="_blank" rel="noopener">DOI</a>
+      {% elsif p.link %}
+      <a href="{{ p.link }}" class="pub-link-btn" target="_blank" rel="noopener">Publisher</a>
+      {% endif %}
+      {% if p.link and p.doi and p.doi != "" %}
+      <a href="{{ p.link }}" class="pub-link-btn pub-link-btn--outline" target="_blank" rel="noopener">Publisher</a>
       {% endif %}
       <a href="{{ '/publications/' | relative_url }}{{ p.id }}/" class="pub-link-btn pub-link-btn--outline">Details</a>
     </p>
