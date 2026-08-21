@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Lab for Computational Legal Studies
+eyebrow: Research lab
 subtitle: A new interdisciplinary research lab at the Hebrew University of Jerusalem
 permalink: /lab/
 description: "The Lab for Computational Legal Studies studies AI, digital markets, and regulatory enforcement using computational and empirical methods."

@@ -5,7 +5,8 @@ layout: default
 <article class="publication-detail">
   <p class="back-link"><a href="{{ '/publications/' | relative_url }}">← All Publications</a></p>
 
-  <header class="publication-header">
+  <header class="publication-header publication-hero">
+    <p class="section-kicker">Publication</p>
     <div class="pub-meta-badges">
       <span class="pub-year-badge">{{ page.year }}</span>
       <span class="pub-type-badge">{{ page.type }}</span>
@@ -30,7 +31,8 @@ layout: default
   </section>
   {% endif %}
 
-  <section class="links">
+  <section class="links content-panel publication-access">
+    <p class="section-kicker">Links</p>
     <h2>Access</h2>
     <div class="link-buttons">
       {% if page.link %}

@@ -1,12 +1,22 @@
 ---
 layout: page
 title: CV
+eyebrow: Curriculum vitae
+subtitle: Education, appointments, grants, teaching, and academic service
 permalink: /cv/
+description: "Curriculum vitae of Amit Zac, including education, appointments, grants, teaching, and service."
 ---
 
-<div class="cv-download">
-  <a href="{{ site.cv_pdf | relative_url }}" class="button" download>Download CV (PDF)</a>
-</div>
+<section class="page-intro-panel cv-intro" aria-labelledby="cv-intro-title">
+  <div>
+    <p class="section-kicker">Web and PDF formats</p>
+    <h2 id="cv-intro-title">Academic background at a glance</h2>
+    <p>The sections below provide a concise web version of my academic CV.</p>
+  </div>
+  <div class="page-actions">
+    <a href="{{ site.cv_pdf | relative_url }}" class="button" download>Download CV (PDF)</a>
+  </div>
+</section>
 
 {% assign person = site.data.cv.person %}
 

@@ -1,9 +1,13 @@
 ---
 layout: page
 title: Publications
+eyebrow: Publications
+subtitle: Research on competition, inequality, digital markets, and computational enforcement
 permalink: /publications/
+description: "Publications by Amit Zac on competition law, inequality, digital markets, and computational legal studies."
 ---
 
+<div class="toolbar-panel">
 {% include search-form.html %}
 
 <div class="publications-toolbar">
@@ -25,6 +29,7 @@ permalink: /publications/
       <option value="other">Other</option>
     </select>
   </div>
+</div>
 </div>
 
 <ul class="pub-list">
